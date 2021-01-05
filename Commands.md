@@ -13,3 +13,14 @@ kubectl run <name> --image=<image> --labels=<key=value>[,<key=value>]
 ```
 kubectl expose pod <podname> --port=<port> --name <name>
 ```
+
+## Taint node
+With `-` at the end, it will remove the taint
+```
+kubectl taint nodes <node> <key>=<value>:<operation>[-]
+```
+
+## Label node
+```
+kubectl label nodes <node> <key>=<value>
+```
