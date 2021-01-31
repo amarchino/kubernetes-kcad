@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql-deployment
+  labels:
+    app: mysql
+spec:
+  template:
+    metadata:
+      labels:
+        app: mysql
+    spec:
+      containers:
+      - name: mysql
+        image: <mysql
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+      subdomain: mysql-h
+      hostname: mysql-pod
+  replicas: 3
+  selector:
+    matchLabels:
+      app: mysql
